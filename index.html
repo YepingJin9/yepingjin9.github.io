@@ -1,27 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Website</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yeping (Patrick) Jin</title>
+  <meta name="description" content="Yeping (Patrick) Jin — Systems Engineering Ph.D. student at Boston University. Optimization, algorithms, and robust ML." />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #0066cc;
-    }
+    :root{--bg:#fff;--fg:#111;--muted:#555;--link:#1a73e8;--card:#f6f7f9}
+    @media (prefers-color-scheme:dark){:root{--bg:#0e1116;--fg:#e6edf3;--muted:#a0acb7;--link:#6ea8fe;--card:#141a21}}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:18px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:28px}
+    header{display:grid;grid-template-columns:1.1fr 320px;gap:28px;align-items:start;margin-top:10px}
+    h1{font-size:46px;line-height:1.15;margin:8px 0}
+    .hero p{margin:12px 0}
+    .links{margin-top:10px}
+    .links a{margin-right:16px}
+    .photo{width:100%;height:320px;border-radius:8px;background:#dbe3ef center/cover no-repeat url('portrait.jpg');border:1px solid #0001}
+
+    section{margin-top:48px}
+    h2{font-size:30px;margin:0 0 16px 0}
+
+    .pub{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 28px 0}
+    .pub-title{font-weight:700}
+    .pub-venue{font-style:italic}
+    .pub small{color:var(--muted)}
+
+    .footer{margin:60px 0 20px;color:var(--muted);text-align:center;font-size:14px}
+    @media(max-width:860px){header{grid-template-columns:1fr} .photo{height:220px}}
   </style>
 </head>
 <body>
-  <h1>Hello, I’m [Your Name]</h1>
-  <p>Welcome to my personal website! This is my first page built with HTML.</p>
-  <h2>About Me</h2>
-  <p>I’m interested in data science, AI, and creative projects.</p>
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+  <div class="wrap">
+    <header>
+      <div class="hero">
+        <h1>Yeping (Patrick) Jin</h1>
+        <p>I am a Systems Engineering Ph.D. student at <a href="https://www.bu.edu/" target="_blank" rel="noopener">Boston University</a>. My interests lie in optimization and algorithm analysis, with applications to robust machine learning and decision-making systems.</p>
+        <p>Previously, I completed an M.S. in Operations Research at Columbia University and an M.A./B.S. in Mathematics at UCLA. I enjoy turning elegant theory into practical systems.</p>
+        <!-- Uncomment to show availability note -->
+        <!-- <p style="color:#c62828;font-weight:700">I'm actively looking for research internship positions for Summer 2026.</p> -->
+        <p class="links">
+          <a href="#">Resume</a> /
+          <a href="mailto:your@email.com">Email</a> /
+          <a href="#">Google Scholar</a> /
+          <a href="#">Github</a> /
+          <a href="#">LinkedIn</a> /
+          <a href="#">X</a>
+        </p>
+      </div>
+      <div class="photo" title="Add your portrait as portrait.jpg"></div>
+    </header>
+
+    <section id="research">
+      <h2>Research</h2>
+      <p>I'm broadly interested in optimization for learning, distributional robustness, and algorithmic foundations. Selected projects below.</p>
+
+      <div class="pub">
+        <div class="pub-title">Acceleration in Momentum Methods via Continuous-Time ODE Limits</div>
+        <div><strong>Yeping (Patrick) Jin</strong></div>
+        <div class="pub-venue">Research project, 2022–present.</div>
+        <div>We derive ODE limits for Nesterov-style momentum, prove uniform convergence from discrete momentum to ODE solutions, and explain acceleration phenomena; experiments in PyTorch show 1–50× speedups over (stochastic) gradient descent on representative tasks.</div>
+        <div><a href="#">arXiv</a> / <a href="#">code</a></div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Randomized Algorithms for the Closest-Pair / Light-Bulb Problems</div>
+        <div><strong>Yeping (Patrick) Jin</strong> and collaborators</div>
+        <div class="pub-venue">Project lead, 2022.</div>
+        <div>Survey and analysis of subquadratic algorithms (e.g., LSH-based and ~O(n<sup>1.6</sup>) variants), connections to fast matrix multiplication, and deterministic variants for special cases; wrote a comparative review and empirical notes.</div>
+        <div><a href="#">pdf</a> / <a href="#">code</a></div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Second-Price Pacing Equilibria for Online Advertising</div>
+        <div><strong>Yeping (Patrick) Jin</strong> and collaborators</div>
+        <div class="pub-venue">Course project, 2022.</div>
+        <div>Constructed a pacing-augmented auction model using real CTR datasets; trained a decision-tree predictor and computed equilibria via MIP, perturbation, and smoothing methods (Gurobi); analyzed scaling behavior on semi-real data.</div>
+        <div><a href="#">report</a> / <a href="#">code</a></div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Expert-Guided Distributionally Robust Learning for Credible Health Predictions</div>
+        <div><strong>Yeping (Patrick) Jin</strong> et al.</div>
+        <div class="pub-venue">Ongoing work.</div>
+        <div>Formulates Wasserstein-robust learning with expert-structured regularization (group sparsity vs. expert-dense groups) for interpretable EHR prediction; includes synthetic and clinical evaluations.</div>
+        <div><a href="#">manuscript</a> / <a href="#">code</a></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+      <p>Links: <a href="#">Github</a> · <a href="#">LinkedIn</a> · <a href="#">X</a></p>
+    </section>
+
+    <div class="footer">© <span id="year"></span> Yeping (Patrick) Jin</div>
+  </div>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
