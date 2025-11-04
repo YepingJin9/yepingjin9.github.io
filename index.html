@@ -28,7 +28,6 @@
     .pub-venue{font-style:italic}
     .pub small{color:var(--muted)}
     details summary{cursor:pointer;color:var(--link)}
-    .affil{font-size:16px;color:var(--muted);margin-top:-8px}
 
     .footer{margin:60px 0 20px;color:var(--muted);text-align:center;font-size:14px}
     @media(max-width:860px){header{grid-template-columns:1fr} .photo{height:220px}}
@@ -39,7 +38,13 @@
     <header>
       <div class="hero">
         <h1>Yeping Jin</h1>
-        <p>I am a Systems Engineering Ph.D. student at <a href="https://www.bu.edu/" target="_blank" rel="noopener">Boston University</a>. My interests lie in optimization and algorithm analysis, with applications to robust machine learning and decision-making systems.</p>
+        <p>
+          I am a Systems Engineering Ph.D. student at 
+          <a href="https://www.bu.edu/" target="_blank" rel="noopener">Boston University</a>, 
+          working under the supervision of 
+          <a href="https://sites.bu.edu/paschalidis/people/yannis-paschalidis/" target="_blank" rel="noopener">Professor Ioannis Ch. Paschalidis</a>.
+          My interests lie in optimization and algorithm analysis, with applications to robust machine learning and decision-making systems.
+        </p>
         <p>Previously, I completed an M.S. in Operations Research at Columbia University and an M.A./B.S. in Mathematics at UCLA. I enjoy turning elegant theory into practical systems.</p>
         <!-- Uncomment to show availability note -->
         <!-- <p style="color:#c62828;font-weight:700">I'm actively looking for research internship positions for Summer 2026.</p> -->
@@ -60,7 +65,7 @@
       <!-- Work #1 (Most recent) -->
       <div class="pub">
         <div class="pub-title">Distributionally Robust Learning in Reinforced Token Optimization for Robust Math Reasoning</div>
-        <div><strong>Yeping Jin</strong> and collaborators</div>
+        <div><strong>Yeping Jin</strong>, Jiaming Hu, Ioannis Ch. Paschalidis</div>
         <div class="pub-venue">Preprint, 2025.</div>
         <div>
           We integrate distributionally robust learning into Reinforced Token Optimization (RTO) to harden large language models against structured shifts in math problem distributions. The method emphasizes worst-case token-level feedback and verifier-aware rewards to improve out-of-distribution robustness without sacrificing in-distribution accuracy.
@@ -72,26 +77,18 @@
       <div class="pub">
         <div class="pub-title">Region-Aware Antibody Language Models for Paired VH–VL Sequences: CDR-Focused Pretraining Improves Binding Prediction</div>
         <div>
-          <strong>Mahtab Talaei</strong><sup>1,†</sup>,
-          <strong>Kenji C. Walker</strong><sup>2,†</sup>,
-          <strong>Boran Hao</strong><sup>1</sup>,
-          <strong>Eliot Jolley</strong><sup>2</sup>,
-          <strong>Yeping Jin</strong><sup>1</sup>,
-          <strong>Dima Kozakov</strong><sup>3</sup>,
-          <strong>John Misasi</strong><sup>4</sup>,
-          <strong>Sandor Vajda</strong><sup>2,5</sup>,
-          <strong>Ioannis Ch. Paschalidis</strong><sup>1,*</sup>,
-          <strong>Diane Joseph-McCarthy</strong><sup>2,5,*</sup>
+          <strong>Mahtab Talaei</strong>,
+          <strong>Kenji C. Walker</strong>,
+          <strong>Boran Hao</strong>,
+          <strong>Eliot Jolley</strong>,
+          <strong>Yeping Jin</strong>,
+          <strong>Dima Kozakov</strong>,
+          <strong>John Misasi</strong>,
+          <strong>Sandor Vajda</strong>,
+          <strong>Ioannis Ch. Paschalidis</strong>,
+          <strong>Diane Joseph-McCarthy</strong>
         </div>
         <div class="pub-venue">Manuscript in preparation, 2025.</div>
-        <div><small><sup>†</sup>These authors contributed equally. <sup>*</sup>Corresponding authors.</small></div>
-        <div class="affil">
-          <sup>1</sup>Department of Electrical & Computer Engineering, Boston University<br>
-          <sup>2</sup>Department of Biomedical Engineering, Boston University<br>
-          <sup>3</sup>Oden Institute for Computational Engineering and Sciences, University of Texas at Austin<br>
-          <sup>4</sup>National Emerging Infectious Diseases Laboratories (NEIDL), Boston University<br>
-          <sup>5</sup>Center for Integrated Life Sciences & Engineering, Boston University
-        </div>
         <div>
           We propose a region-aware pretraining strategy over paired heavy (VH) and light (VL) variable domains using ESM2-3B and a compact 600M ESM-C model. We compare whole-chain, CDR-focused, and hybrid masking strategies and show that CDR-focused training yields superior embeddings for binding-affinity prediction, matching or exceeding larger antibody-specific baselines while training only on paired sequences.
         </div>
@@ -112,7 +109,10 @@
         <div>
           We develop distributionally robust formulations for survival analysis that improve stability and performance under covariate shift and heterogeneous subpopulations, with applications to clinical risk modeling.
         </div>
-        <div><a href="https://arxiv.org/abs/2506.01348" target="_blank" rel="noopener">arXiv</a> / <a href="#">code</a></div>
+        <div>
+          <a href="https://arxiv.org/abs/2506.01348" target="_blank" rel="noopener">arXiv</a> /
+          <a href="https://github.com/noc-lab/drl_cox" target="_blank" rel="noopener">code</a>
+        </div>
       </div>
     </section>
 
