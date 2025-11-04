@@ -27,6 +27,8 @@
     .pub-title{font-weight:700}
     .pub-venue{font-style:italic}
     .pub small{color:var(--muted)}
+    details summary{cursor:pointer;color:var(--link)}
+    .affil{font-size:16px;color:var(--muted);margin-top:-8px}
 
     .footer{margin:60px 0 20px;color:var(--muted);text-align:center;font-size:14px}
     @media(max-width:860px){header{grid-template-columns:1fr} .photo{height:220px}}
@@ -41,12 +43,12 @@
         <p>Previously, I completed an M.S. in Operations Research at Columbia University and an M.A./B.S. in Mathematics at UCLA. I enjoy turning elegant theory into practical systems.</p>
         <!-- Uncomment to show availability note -->
         <!-- <p style="color:#c62828;font-weight:700">I'm actively looking for research internship positions for Summer 2026.</p> -->
-      <p class="links center-links">
-        <a href="#">Resume</a> /
-        <a href="mailto:yepjin@bu.edu">Email</a> /
-        <a href="https://github.com/YepingJin9" target="_blank" rel="noopener">GitHub</a> /
-        <a href="https://www.linkedin.com/in/yepingjin/" target="_blank" rel="noopener">LinkedIn</a>
-      </p>
+        <p class="links center-links">
+          <a href="#">Resume</a> /
+          <a href="mailto:yepjin@bu.edu">Email</a> /
+          <a href="https://github.com/YepingJin9" target="_blank" rel="noopener">GitHub</a> /
+          <a href="https://www.linkedin.com/in/yepingjin/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
       </div>
       <div class="photo" title="Add your portrait as portrait.jpg"></div>
     </header>
@@ -55,42 +57,68 @@
       <h2>Research</h2>
       <p>I'm broadly interested in optimization for learning, distributional robustness, and algorithmic foundations. Selected projects below.</p>
 
+      <!-- Work #1 (Most recent) -->
       <div class="pub">
-        <div class="pub-title">Acceleration in Momentum Methods via Continuous-Time ODE Limits</div>
-        <div><strong>Yeping Jin</strong></div>
-        <div class="pub-venue">Research project, 2022–present.</div>
-        <div>We derive ODE limits for Nesterov-style momentum, prove uniform convergence from discrete momentum to ODE solutions, and explain acceleration phenomena; experiments in PyTorch show 1–50× speedups over (stochastic) gradient descent on representative tasks.</div>
-        <div><a href="#">arXiv</a> / <a href="#">code</a></div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-title">Randomized Algorithms for the Closest-Pair / Light-Bulb Problems</div>
+        <div class="pub-title">Distributionally Robust Learning in Reinforced Token Optimization for Robust Math Reasoning</div>
         <div><strong>Yeping Jin</strong> and collaborators</div>
-        <div class="pub-venue">Project lead, 2022.</div>
-        <div>Survey and analysis of subquadratic algorithms (e.g., LSH-based and ~O(n<sup>1.6</sup>) variants), connections to fast matrix multiplication, and deterministic variants for special cases; wrote a comparative review and empirical notes.</div>
-        <div><a href="#">pdf</a> / <a href="#">code</a></div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-title">Second-Price Pacing Equilibria for Online Advertising</div>
-        <div><strong>Yeping Jin</strong> and collaborators</div>
-        <div class="pub-venue">Course project, 2022.</div>
-        <div>Constructed a pacing-augmented auction model using real CTR datasets; trained a decision-tree predictor and computed equilibria via MIP, perturbation, and smoothing methods (Gurobi); analyzed scaling behavior on semi-real data.</div>
-        <div><a href="#">report</a> / <a href="#">code</a></div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-title">Expert-Guided Distributionally Robust Learning for Credible Health Predictions</div>
-        <div><strong>Yeping Jin</strong> et al.</div>
-        <div class="pub-venue">Ongoing work.</div>
-        <div>Formulates Wasserstein-robust learning with expert-structured regularization (group sparsity vs. expert-dense groups) for interpretable EHR prediction; includes synthetic and clinical evaluations.</div>
+        <div class="pub-venue">Preprint, 2025.</div>
+        <div>
+          We integrate distributionally robust learning into Reinforced Token Optimization (RTO) to harden large language models against structured shifts in math problem distributions. The method emphasizes worst-case token-level feedback and verifier-aware rewards to improve out-of-distribution robustness without sacrificing in-distribution accuracy.
+        </div>
         <div><a href="#">manuscript</a> / <a href="#">code</a></div>
+      </div>
+
+      <!-- Work #2 -->
+      <div class="pub">
+        <div class="pub-title">Region-Aware Antibody Language Models for Paired VH–VL Sequences: CDR-Focused Pretraining Improves Binding Prediction</div>
+        <div>
+          <strong>Mahtab Talaei</strong><sup>1,†</sup>,
+          <strong>Kenji C. Walker</strong><sup>2,†</sup>,
+          <strong>Boran Hao</strong><sup>1</sup>,
+          <strong>Eliot Jolley</strong><sup>2</sup>,
+          <strong>Yeping Jin</strong><sup>1</sup>,
+          <strong>Dima Kozakov</strong><sup>3</sup>,
+          <strong>John Misasi</strong><sup>4</sup>,
+          <strong>Sandor Vajda</strong><sup>2,5</sup>,
+          <strong>Ioannis Ch. Paschalidis</strong><sup>1,*</sup>,
+          <strong>Diane Joseph-McCarthy</strong><sup>2,5,*</sup>
+        </div>
+        <div class="pub-venue">Manuscript in preparation, 2025.</div>
+        <div><small><sup>†</sup>These authors contributed equally. <sup>*</sup>Corresponding authors.</small></div>
+        <div class="affil">
+          <sup>1</sup>Department of Electrical & Computer Engineering, Boston University<br>
+          <sup>2</sup>Department of Biomedical Engineering, Boston University<br>
+          <sup>3</sup>Oden Institute for Computational Engineering and Sciences, University of Texas at Austin<br>
+          <sup>4</sup>National Emerging Infectious Diseases Laboratories (NEIDL), Boston University<br>
+          <sup>5</sup>Center for Integrated Life Sciences & Engineering, Boston University
+        </div>
+        <div>
+          We propose a region-aware pretraining strategy over paired heavy (VH) and light (VL) variable domains using ESM2-3B and a compact 600M ESM-C model. We compare whole-chain, CDR-focused, and hybrid masking strategies and show that CDR-focused training yields superior embeddings for binding-affinity prediction, matching or exceeding larger antibody-specific baselines while training only on paired sequences.
+        </div>
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Antibodies are a leading class of biologics, yet their architecture with conserved framework regions and hypervariable complementarity-determining regions (CDRs) poses unique challenges for computational modeling. We present a region-aware pretraining strategy for paired heavy (VH) and light (VL) sequences in variable domains using ESM2-3B and ESM-C (600M) protein language models. We compare three masking strategies: whole-chain, CDR-focused, and a hybrid approach. Through evaluation on binding-affinity datasets spanning single-mutant panels and combinatorial mutants, we demonstrate that CDR-focused training produces superior embeddings for functional prediction. Notably, training only on VH-VL pairs proves sufficient, eliminating the need for massive unpaired pretraining that provides no measurable downstream benefit. Our compact 600M ESM-C model achieves state-of-the-art performance, matching or exceeding larger antibody-specific baselines. These findings establish a principled framework for antibody language models: prioritize paired sequences with CDR-aware supervision over scale and complex training curricula to achieve both computational efficiency and predictive accuracy.
+          </p>
+        </details>
+        <div><a href="#">manuscript</a> / <a href="#">code</a></div>
+      </div>
+
+      <!-- Work #3 -->
+      <div class="pub">
+        <div class="pub-title">Distributionally Robust Learning in Survival Analysis</div>
+        <div><strong>Yeping Jin</strong>, Lauren A. Wise, Ioannis Ch. Paschalidis</div>
+        <div class="pub-venue">arXiv, 2025.</div>
+        <div>
+          We develop distributionally robust formulations for survival analysis that improve stability and performance under covariate shift and heterogeneous subpopulations, with applications to clinical risk modeling.
+        </div>
+        <div><a href="https://arxiv.org/abs/2506.01348" target="_blank" rel="noopener">arXiv</a> / <a href="#">code</a></div>
       </div>
     </section>
 
     <div class="footer">© <span id="year"></span> Yeping Jin</div>
   </div>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 </body>
 </html>
